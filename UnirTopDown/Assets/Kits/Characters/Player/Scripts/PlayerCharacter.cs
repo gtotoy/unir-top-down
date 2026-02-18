@@ -5,6 +5,7 @@ public class PlayerCharacter : BaseCharacter
 {
     [SerializeField] InputActionReference moveIARef;
     [SerializeField] InputActionReference attack1IARef;
+    [SerializeField] InputActionReference blockIARef;
 
     [Header("Attack 1 data")]
     [SerializeField] float attack1Radius = 0.5f;
@@ -19,6 +20,10 @@ public class PlayerCharacter : BaseCharacter
 
         attack1IARef.action.Enable();
         attack1IARef.action.performed += HandleAttack1InputAction;
+
+        blockIARef.action.Enable();
+        blockIARef.action.started += HandleBlockInputAction;
+        blockIARef.action.canceled += HandleBlockInputAction;
     }
 
     private void OnDisable()
@@ -30,6 +35,10 @@ public class PlayerCharacter : BaseCharacter
 
         attack1IARef.action.Disable();
         attack1IARef.action.performed -= HandleAttack1InputAction;
+
+        blockIARef.action.Disable();
+        blockIARef.action.started -= HandleBlockInputAction;
+        blockIARef.action.canceled -= HandleBlockInputAction;
     }
 
     protected override void Update()
@@ -45,6 +54,8 @@ public class PlayerCharacter : BaseCharacter
 
     private void HandleMoveInputAction(InputAction.CallbackContext obj)
     {
+        if (GameUIManager.IsPaused) return;
+
         var dir = obj.action.ReadValue<Vector2>();
         base.SetMovementDirection(dir);
         if (dir.magnitude > 0) {
@@ -54,8 +65,17 @@ public class PlayerCharacter : BaseCharacter
 
     private void HandleAttack1InputAction(InputAction.CallbackContext obj)
     {
+        if (GameUIManager.IsPaused) return;
+
         DoAttack1();
         base.animator.SetTrigger("Attack1");
+    }
+
+    private void HandleBlockInputAction(InputAction.CallbackContext obj)
+    {
+        if (GameUIManager.IsPaused) return;
+
+        base.animator.SetBool("IsBlocking", obj.started);
     }
 
     private Vector2 attack1Dir = Vector2.right;
@@ -65,8 +85,11 @@ public class PlayerCharacter : BaseCharacter
         foreach (var hit in hits) {
             var baseCharacter = hit.collider.GetComponent<BaseCharacter>();
             if (baseCharacter != this) {
-                baseCharacter.NotifyAttack1();
+                Vector2 recoilDir = (hit.transform.position - transform.position).normalized;
+                baseCharacter.NotifyAttack1(recoilDir);
             }
         }
     }
+
+
 }

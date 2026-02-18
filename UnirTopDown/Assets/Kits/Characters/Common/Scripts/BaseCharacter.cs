@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BaseCharacter : MonoBehaviour
@@ -11,6 +12,13 @@ public class BaseCharacter : MonoBehaviour
 
     private Vector2 lookDir;
     private Vector2 movementDir;
+
+    [Header("Hit Effect")]
+    [SerializeField] float recoilForce = 5f;
+    [SerializeField] float recoilDuration = 0.15f;
+    [SerializeField] float tintDuration = 0.2f;
+
+    private bool isRecoiling = false;
 
     protected virtual void Awake()
     {
@@ -40,8 +48,26 @@ public class BaseCharacter : MonoBehaviour
         movementDir = dir;
     }
 
-    internal void NotifyAttack1()
+    internal void NotifyAttack1(Vector2 hitDirection)
     {
-        Destroy(gameObject);    
+        StartCoroutine(RecoilCoroutine(hitDirection));
+        StartCoroutine(RedTintCoroutine());
+    }
+
+    private IEnumerator RecoilCoroutine(Vector2 direction)
+    {
+        isRecoiling = true;
+        body.linearVelocity = Vector2.zero;
+        body.AddForce(direction * recoilForce, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(recoilDuration);
+        body.linearVelocity = Vector2.zero;
+        isRecoiling = false;
+    }
+
+    private IEnumerator RedTintCoroutine()
+    {
+        spriteRend.color = Color.red;
+        yield return new WaitForSeconds(tintDuration);
+        spriteRend.color = Color.white;
     }
 }
