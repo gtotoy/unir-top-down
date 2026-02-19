@@ -47,4 +47,10 @@ public class Sight2D : MonoBehaviour
     {
         return closestTarget;
     }
+
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
 }

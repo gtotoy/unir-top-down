@@ -85,7 +85,7 @@ public class PlayerCharacter : BaseCharacter
         var hits = Physics2D.CircleCastAll(transform.position, attack1Radius, attack1Dir, attack1Range);
         foreach (var hit in hits) {
             var baseCharacter = hit.collider.GetComponent<BaseCharacter>();
-            if (baseCharacter != this) {
+            if (baseCharacter && baseCharacter != this) {
                 Vector2 recoilDir = (hit.transform.position - transform.position).normalized;
                 baseCharacter.NotifyAttack1(recoilDir);
             }
