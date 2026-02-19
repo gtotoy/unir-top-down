@@ -1,11 +1,13 @@
+using System.Linq;
 using UnityEngine;
 
 public class Sight2D : MonoBehaviour
 {
     [SerializeField] float radius = 5f;
     [SerializeField] float checkFrequency = 1.0f;
+    [SerializeField] StimuliSource.SourceSide[] perceivedSides;
 
-    private Collider2D closestPlayer;
+    private Collider2D closestTarget;
 
     private float lasCheckTime;
 
@@ -21,16 +23,20 @@ public class Sight2D : MonoBehaviour
             lasCheckTime = Time.time + checkFrequency;
 
             var colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-            closestPlayer = null;
-            float distanceToClosestPlayer = Mathf.Infinity;
+            closestTarget = null;
+            float distanceToClosestTarget = Mathf.Infinity;
+            int priorityOfClosestTarget = -1;
             foreach (var collider in colliders) {
-                if (collider.CompareTag("Player"))
+                StimuliSource stimuliSource = collider.GetComponent<StimuliSource>();
+                if (stimuliSource && perceivedSides.Contains(stimuliSource.Side))
                 {
-                    float distanceToPlayer = Vector3.Distance(transform.position, collider.transform.position);
-                    if (distanceToPlayer < distanceToClosestPlayer)
+                    float distanceToStimuliSource = Vector3.Distance(transform.position, collider.transform.position);
+                    if (stimuliSource.Priority > priorityOfClosestTarget 
+                        || (stimuliSource.Priority == priorityOfClosestTarget && distanceToStimuliSource < distanceToClosestTarget))
                     {
-                        closestPlayer = collider;
-                        distanceToClosestPlayer = distanceToPlayer;
+                        closestTarget = collider;
+                        distanceToClosestTarget = distanceToStimuliSource;
+                        priorityOfClosestTarget = stimuliSource.Priority;
                     }
                 }
             }
@@ -39,6 +45,6 @@ public class Sight2D : MonoBehaviour
 
     public Collider2D GetClosestTargetInSight()
     {
-        return closestPlayer;
+        return closestTarget;
     }
 }
