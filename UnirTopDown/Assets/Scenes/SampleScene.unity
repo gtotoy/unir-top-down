@@ -820,8 +820,8 @@ MonoBehaviour:
   moveIARef: {fileID: 1842938032}
   attack1IARef: {fileID: 466113315}
   blockIARef: {fileID: 878788024602337100, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
-  attack1Radius: 0.2
-  attack1Range: 0.3
+  attack1Radius: 0.25
+  attack1Range: 1
 --- !u!50 &939464918
 Rigidbody2D:
   serializedVersion: 5

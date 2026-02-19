@@ -50,6 +50,7 @@ public class PlayerCharacter : BaseCharacter
     {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, attack1Dir * attack1Range);
+        Gizmos.DrawSphere(transform.position + (Vector3)attack1Dir * attack1Range, attack1Radius);
     }
 
     private void HandleMoveInputAction(InputAction.CallbackContext obj)
@@ -81,7 +82,7 @@ public class PlayerCharacter : BaseCharacter
     private Vector2 attack1Dir = Vector2.right;
     private void DoAttack1()
     {
-        var hits = Physics2D.CircleCastAll(transform.position, attack1Radius, attack1Dir * attack1Range);
+        var hits = Physics2D.CircleCastAll(transform.position, attack1Radius, attack1Dir, attack1Range);
         foreach (var hit in hits) {
             var baseCharacter = hit.collider.GetComponent<BaseCharacter>();
             if (baseCharacter != this) {
