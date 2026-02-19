@@ -4,9 +4,10 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BaseCharacter : MonoBehaviour
 {
-    SpriteRenderer spriteRend;
-    Rigidbody2D body;
+    protected SpriteRenderer spriteRend;
+    protected Rigidbody2D body;
     protected Animator animator;
+    protected Life life;
 
     [SerializeField] float movementSpeed = 5;
 
@@ -40,6 +41,7 @@ public class BaseCharacter : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        life = GetComponent<Life>();
     }
 
     protected virtual void Update()
@@ -62,6 +64,11 @@ public class BaseCharacter : MonoBehaviour
         }
     }
 
+    public virtual void HandleOnDeath()
+    {
+        Destroy(gameObject);
+    }
+
     protected void SetMovementDirection(Vector2 dir)
     {
         movementDir = dir;
@@ -82,6 +89,7 @@ public class BaseCharacter : MonoBehaviour
         }
         else
         {
+            life.ReceiveDamage(0.1f);
             StartCoroutine(RecoilCoroutine(hitDirection, 1f));
             StartCoroutine(RedTintCoroutine());
         }

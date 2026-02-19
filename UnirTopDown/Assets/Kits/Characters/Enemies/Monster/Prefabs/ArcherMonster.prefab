@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8907079784638927239}
   - component: {fileID: 3158517844497700891}
   - component: {fileID: 1616607276494768894}
+  - component: {fileID: -8695554517286275134}
   m_Layer: 0
   m_Name: ArcherMonster
   m_TagString: Untagged
@@ -316,3 +317,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8695554517286275134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567766292206557725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1f3fd0b36fa3745bc8eac933a8f9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Life
+  startLife: 1
+  OnLifeChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
