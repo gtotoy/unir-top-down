@@ -29,11 +29,15 @@ public class BaseCharacter : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (movementDir != Vector2.zero) {
-            lookDir = movementDir;
-        }
+        if (!isRecoiling)
+        {
+            if (movementDir != Vector2.zero) {
+                lookDir = movementDir;
+            }
 
-        body.position += movementSpeed * movementDir * Time.deltaTime;
+            body.position += movementSpeed * movementDir * Time.deltaTime;
+        }
+        
 
         animator.SetFloat("HorizontalVelocity", movementDir.x);
         animator.SetFloat("VerticalVelocity", movementDir.y);
