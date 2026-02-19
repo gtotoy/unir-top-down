@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Sight2D))]
 public class BaseMonster : BaseCharacter
 {
-    Sight2D sight;
+    protected Sight2D sight;
 
     protected override void Awake()
     {
@@ -13,14 +13,15 @@ public class BaseMonster : BaseCharacter
 
     protected override void Update()
     {
-        var closestTarget = sight.GetClosestTargetInSight();
-        if (closestTarget != null) {
-            base.SetMovementDirection((closestTarget.transform.position - transform.position).normalized);
-        } else
-        {
-            base.SetMovementDirection(Vector2.zero);
-        }
-
+        UpdateBehavior();
         base.Update();
+    }
+
+    protected virtual void UpdateBehavior()
+    {
+        var target = sight.GetClosestTargetInSight();
+        SetMovementDirection(target != null
+            ? (target.transform.position - transform.position).normalized
+            : Vector2.zero);
     }
 }

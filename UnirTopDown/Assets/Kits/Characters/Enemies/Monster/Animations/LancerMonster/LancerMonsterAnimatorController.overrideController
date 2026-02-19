@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LancerMonsterAnimatorController
+  m_Controller: {fileID: 9100000, guid: cbe968a88790ec748b813e15f9cad850, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 63c8094f0b1eff64181cd60350ed42f4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e85c887070bb84dda92e16bd3cdaf921, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 217d06b3fe1d13e4b821dd07b2851f7f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 635ec54a311ee44fb83b6cd3e6dacc43, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c9ffb5503d7d2c449ba9014d23edd031, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: eab70e10e7f354867bc3e2a024a45da4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c75660902e0936b40b3f45d325d0157e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 02955a441ad324050ad46085154a3640, type: 2}

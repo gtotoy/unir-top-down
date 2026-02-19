@@ -67,7 +67,7 @@ public class PlayerCharacter : BaseCharacter
     private void HandleAttack1InputAction(InputAction.CallbackContext obj)
     {
         if (GameUIManager.IsPaused) return;
-
+        PlayAttackSound();
         DoAttack1();
         base.animator.SetTrigger("Attack1");
     }
@@ -76,7 +76,7 @@ public class PlayerCharacter : BaseCharacter
     {
         if (GameUIManager.IsPaused) return;
 
-        base.animator.SetBool("IsBlocking", obj.started);
+        IsBlocking = obj.started;
     }
 
     private Vector2 attack1Dir = Vector2.right;

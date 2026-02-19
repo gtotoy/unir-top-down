@@ -18,13 +18,28 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField] float recoilDuration = 0.15f;
     [SerializeField] float tintDuration = 0.2f;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip attackSound;
+
     private bool isRecoiling = false;
+    private bool isBlocking = false;
+    protected bool IsBlocking
+    {
+        get => isBlocking;
+        set
+        {
+            isBlocking = value;
+            animator.SetBool("IsBlocking", value);
+        }
+    }
 
     protected virtual void Awake()
     {
         spriteRend = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected virtual void Update()
@@ -52,17 +67,31 @@ public class BaseCharacter : MonoBehaviour
         movementDir = dir;
     }
 
-    internal void NotifyAttack1(Vector2 hitDirection)
+    protected void PlayAttackSound()
     {
-        StartCoroutine(RecoilCoroutine(hitDirection));
-        StartCoroutine(RedTintCoroutine());
+        if (audioSource != null && attackSound != null)
+            audioSource.PlayOneShot(attackSound);
     }
 
-    private IEnumerator RecoilCoroutine(Vector2 direction)
+    internal void NotifyAttack1(Vector2 hitDirection)
+    {
+        if (isBlocking)
+        {
+            StartCoroutine(RecoilCoroutine(hitDirection, 0.5f));
+            StartCoroutine(BlockTintCoroutine());
+        }
+        else
+        {
+            StartCoroutine(RecoilCoroutine(hitDirection, 1f));
+            StartCoroutine(RedTintCoroutine());
+        }
+    }
+
+    private IEnumerator RecoilCoroutine(Vector2 direction, float forceMultiplier)
     {
         isRecoiling = true;
         body.linearVelocity = Vector2.zero;
-        body.AddForce(direction * recoilForce, ForceMode2D.Impulse);
+        body.AddForce(direction * recoilForce * forceMultiplier, ForceMode2D.Impulse);
         yield return new WaitForSeconds(recoilDuration);
         body.linearVelocity = Vector2.zero;
         isRecoiling = false;
@@ -71,6 +100,13 @@ public class BaseCharacter : MonoBehaviour
     private IEnumerator RedTintCoroutine()
     {
         spriteRend.color = Color.red;
+        yield return new WaitForSeconds(tintDuration);
+        spriteRend.color = Color.white;
+    }
+
+    private IEnumerator BlockTintCoroutine()
+    {
+        spriteRend.color = Color.lightSkyBlue;
         yield return new WaitForSeconds(tintDuration);
         spriteRend.color = Color.white;
     }
