@@ -123,4 +123,6 @@ public class EnemySpawner : MonoBehaviour
             Gizmos.DrawLine(transform.position, group.spawnPoint.position);
         }
     }
+
+    public int getActiveEnemies() => activeEnemies.Count;
 }
