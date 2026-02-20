@@ -9,6 +9,7 @@ public class GameUIManager : MonoBehaviour
     public static bool IsPaused = false;
 
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject gameOverUI;
 
     private void OnEnable()
     {
@@ -27,6 +28,12 @@ public class GameUIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
+    }
+
+    public void HandleOnPlayerDeath()
+    {
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     void Pause(InputAction.CallbackContext obj)
