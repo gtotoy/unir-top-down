@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -22,8 +23,7 @@ public class Door : MonoBehaviour
         else
         {
             canvasMessage.SetActive(false);
-            anim.SetBool("isLocked", isLocked);
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(OpenDoor());
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -37,5 +37,12 @@ public class Door : MonoBehaviour
     public void setIsUnlocked()
     { 
         isLocked = false;
+    }
+
+    private IEnumerator OpenDoor()
+    {
+        anim.SetBool("isLocked", isLocked);
+        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
