@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -466,7 +466,7 @@ MonoBehaviour:
   OnLifeChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3924307095186824467, guid: 49d0269fa0dbd8b4d8479dfa154940ea, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LifeBar, Assembly-CSharp
         m_MethodName: HandleOnLifeChanged
         m_Mode: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3756445190083313348, guid: 112d47d1bc957cf4aa18ce8d5dfa485f, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
         m_MethodName: HandleOnPlayerDeath
         m_Mode: 1

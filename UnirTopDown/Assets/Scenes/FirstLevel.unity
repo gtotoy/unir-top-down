@@ -9195,7 +9195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneController
   enemySpawner: {fileID: 766598164}
   keyFlyPrefab: {fileID: 776832666375504215, guid: 5ad4aa536720b4042816d937ae7c660c, type: 3}
-  door: {fileID: 0}
+  door: {fileID: 2102635314}
 --- !u!61 &871654655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38487,25 +38487,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 104474898}
     - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1867287119}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleOnPlayerDeath
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: HandleOnDeath
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 900761896}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleOnLifeChanged
-      objectReference: {fileID: 0}
     - target: {fileID: 5797007773952590743, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.5851583
@@ -38546,14 +38530,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7040749431789189278, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7040749431789189278, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7648212986366831742, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -38568,17 +38544,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5797007773952590743, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
   m_PrefabInstance: {fileID: 1867287114}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1867287119 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2334987622982136902, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-  m_PrefabInstance: {fileID: 1867287114}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7765ebd63bdc40439445de7fdd45358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacter
 --- !u!1001 &1871816046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41112,6 +41077,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2023186038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102635314 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7675717987706386505, guid: f253481d55406244c8cea434dfd71aec, type: 3}
+  m_PrefabInstance: {fileID: 5599304302212714980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efbdd58bc5ce61478824ae1441010d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Door
 --- !u!1 &2125682172
 GameObject:
   m_ObjectHideFlags: 0
