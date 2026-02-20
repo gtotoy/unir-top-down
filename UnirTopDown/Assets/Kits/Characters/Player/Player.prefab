@@ -207,6 +207,13 @@ MonoBehaviour:
   blockIARef: {fileID: 878788024602337100, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
   attack1Radius: 0.25
   attack1Range: 1
+  attack1Damage: 0.1
+  dropPrefabsToSpawn:
+  - {fileID: 8540471824933652219, guid: f2b37173c15443a42b1deff1c864559d, type: 3}
+  minSpawnTime: 1
+  maxSpawnTime: 5
+  minSpawnRadius: 2
+  maxSpawnRadius: 7
 --- !u!114 &4276477468395572575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,3 +337,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1f3fd0b36fa3745bc8eac933a8f9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Life
+  startLife: 1
+  currentLife: 0
+  OnLifeChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []

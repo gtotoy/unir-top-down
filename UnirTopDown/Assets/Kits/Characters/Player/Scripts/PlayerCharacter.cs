@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,13 @@ public class PlayerCharacter : BaseCharacter
     [SerializeField] float attack1Radius = 0.5f;
     [SerializeField] float attack1Range = 0.5f;
     [SerializeField] float attack1Damage = 0.1f;
+
+    [Header("Drops")]
+    [SerializeField] Drop[] dropPrefabsToSpawn;
+    [SerializeField] float minSpawnTime = 1f;
+    [SerializeField] float maxSpawnTime = 5f;
+    [SerializeField] float minSpawnRadius = 2;
+    [SerializeField] float maxSpawnRadius = 7;
 
     private void OnEnable()
     {
@@ -40,6 +48,17 @@ public class PlayerCharacter : BaseCharacter
         blockIARef.action.Disable();
         blockIARef.action.started -= HandleBlockInputAction;
         blockIARef.action.canceled -= HandleBlockInputAction;
+    }
+
+    private async void Start()
+    {
+        while(!destroyCancellationToken.IsCancellationRequested)
+        {
+            await Awaitable.WaitForSecondsAsync(Random.Range(minSpawnTime, maxSpawnTime));
+            var dropPrefab = dropPrefabsToSpawn[Random.Range(0, dropPrefabsToSpawn.Length)];
+            var dropPosition = transform.position + Random.Range(minSpawnRadius, maxSpawnRadius) * (Vector3)Random.insideUnitCircle;
+            GameObject.Instantiate(dropPrefab, dropPosition, Quaternion.identity);
+        }
     }
 
     protected override void Update()
