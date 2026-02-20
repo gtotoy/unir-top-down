@@ -25,6 +25,7 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField] AudioClip dashSound;
     [SerializeField] AudioClip blockSound;
     [SerializeField] AudioClip healingSound;
+    [SerializeField] AudioClip damagedSound;
 
     [Header("FeedbackEffects")]
     [SerializeField] Animator feedbackEffects;
@@ -134,6 +135,8 @@ public class BaseCharacter : MonoBehaviour
         }
         else
         {
+            if (audioSource != null && damagedSound != null)
+                audioSource.PlayOneShot(damagedSound);
             life.ReceiveDamage(damage);
             StartCoroutine(RecoilCoroutine(hitDirection, 1f));
             StartCoroutine(RedTintCoroutine());

@@ -104,6 +104,7 @@ MonoBehaviour:
   dashSound: {fileID: 0}
   blockSound: {fileID: 0}
   healingSound: {fileID: 8300000, guid: 9cbf65c469d16644e9b8963841b6d4dd, type: 3}
+  damagedSound: {fileID: 8300000, guid: 2117c1b4740df21489778f2058268309, type: 3}
   feedbackEffects: {fileID: 5944820800854112912}
   attackRange: 1.2
   attackCooldown: 1.5

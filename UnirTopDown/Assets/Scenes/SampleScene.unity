@@ -777,6 +777,7 @@ MonoBehaviour:
   dashSound: {fileID: 0}
   blockSound: {fileID: 0}
   healingSound: {fileID: 0}
+  damagedSound: {fileID: 0}
   feedbackEffects: {fileID: 0}
   moveIARef: {fileID: 1842938032}
   attack1IARef: {fileID: 466113315}
@@ -1248,6 +1249,7 @@ MonoBehaviour:
   dashSound: {fileID: 0}
   blockSound: {fileID: 0}
   healingSound: {fileID: 0}
+  damagedSound: {fileID: 0}
   feedbackEffects: {fileID: 0}
 --- !u!114 &1154108235
 MonoBehaviour:
@@ -1793,18 +1795,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerLifeBar
       objectReference: {fileID: 0}
-    - target: {fileID: 5248093867087062657, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5248093867087062657, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.40000153
-      objectReference: {fileID: 0}
-    - target: {fileID: 5248093867087062657, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 4.200001
-      objectReference: {fileID: 0}
     - target: {fileID: 5554295096331155698, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1884,38 +1874,6 @@ PrefabInstance:
     - target: {fileID: 5554295096331155698, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7397242707775701101, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 95ccf692195044964a477a2f2538a1e0, type: 3}
-    - target: {fileID: 7397242707775701101, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7397242707775701101, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199221642937735256, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1149
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199221642937735256, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1149
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199221642937735256, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1149
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199221642937735256, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 12.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199221642937735256, guid: d95398db94ea062408ea0d3d48f3e0cb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -320,13 +320,14 @@ MonoBehaviour:
   dashSound: {fileID: 8300000, guid: 05fc8e444ddc69d44b670c6256751bfb, type: 3}
   blockSound: {fileID: 8300000, guid: 4b906616bbd3b83479d304f4fba682f5, type: 3}
   healingSound: {fileID: 8300000, guid: 9cbf65c469d16644e9b8963841b6d4dd, type: 3}
+  damagedSound: {fileID: 8300000, guid: 2117c1b4740df21489778f2058268309, type: 3}
   feedbackEffects: {fileID: 8510779626225116138}
   moveIARef: {fileID: 0}
   attack1IARef: {fileID: 0}
   blockIARef: {fileID: 878788024602337100, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
   dashIARef: {fileID: -2099379676528639254, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
-  attack1Radius: 0.25
-  attack1Range: 1
+  attack1Radius: 1
+  attack1Range: 0.4
   attack1Damage: 0.1
   dropPrefabsToSpawn:
   - {fileID: 8540471824933652219, guid: f2b37173c15443a42b1deff1c864559d, type: 3}
