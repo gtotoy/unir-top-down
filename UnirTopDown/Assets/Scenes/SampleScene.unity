@@ -1889,6 +1889,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
+      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6020062089741049630}
@@ -1896,6 +1900,26 @@ PrefabInstance:
       propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 108252278}
+    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
+      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 108252278}
+    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
+      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
+      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HandleOnLifeChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
+      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LifeBar, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
+      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2334987622982136902, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: moveIARef
       value: 

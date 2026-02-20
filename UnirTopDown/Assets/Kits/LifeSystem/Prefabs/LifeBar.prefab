@@ -266,6 +266,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeBar
   imageFill: {fileID: 4082631960219933281}
+  avatarImage: {fileID: 8831530724686007350}
+  flashDuration: 0.15
+  shakeDuration: 0.3
+  shakeMagnitude: 8
 --- !u!1 &4687289910278587013
 GameObject:
   m_ObjectHideFlags: 0
