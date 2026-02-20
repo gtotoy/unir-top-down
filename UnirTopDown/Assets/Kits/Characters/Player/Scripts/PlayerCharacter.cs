@@ -1,12 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using UnityEngine.Audio;
 
 public class PlayerCharacter : BaseCharacter
 {
     [SerializeField] InputActionReference moveIARef;
     [SerializeField] InputActionReference attack1IARef;
     [SerializeField] InputActionReference blockIARef;
+    [SerializeField] InputActionReference dashIARef;
 
     [Header("Attack 1 data")]
     [SerializeField] float attack1Radius = 0.5f;
@@ -19,6 +22,14 @@ public class PlayerCharacter : BaseCharacter
     [SerializeField] float maxSpawnTime = 5f;
     [SerializeField] float minSpawnRadius = 2;
     [SerializeField] float maxSpawnRadius = 7;
+    
+    [Header("Dash")]
+    [SerializeField] float dashForce = 15f;
+    [SerializeField] float dashDuration = 0.2f;
+    [SerializeField] float dashCooldown = 1f;
+    [SerializeField] Animator dashEffect;
+
+    private float lastDashTime = -999f;
 
     private void OnEnable()
     {
@@ -33,6 +44,9 @@ public class PlayerCharacter : BaseCharacter
         blockIARef.action.Enable();
         blockIARef.action.started += HandleBlockInputAction;
         blockIARef.action.canceled += HandleBlockInputAction;
+
+        dashIARef.action.Enable();
+        dashIARef.action.performed += HandleDashInputAction;
     }
 
     private void OnDisable()
@@ -48,6 +62,9 @@ public class PlayerCharacter : BaseCharacter
         blockIARef.action.Disable();
         blockIARef.action.started -= HandleBlockInputAction;
         blockIARef.action.canceled -= HandleBlockInputAction;
+
+        dashIARef.action.Disable();
+        dashIARef.action.performed -= HandleDashInputAction;
     }
 
     private async void Start()
@@ -86,7 +103,7 @@ public class PlayerCharacter : BaseCharacter
 
     private void HandleAttack1InputAction(InputAction.CallbackContext obj)
     {
-        if (GameUIManager.IsPaused) return;
+        if (GameUIManager.IsPaused || IsBlocking) return;
         PlayAttackSound();
         DoAttack1();
         base.animator.SetTrigger("Attack1");
@@ -97,6 +114,38 @@ public class PlayerCharacter : BaseCharacter
         if (GameUIManager.IsPaused) return;
 
         IsBlocking = obj.started;
+    }
+
+    private void HandleDashInputAction(InputAction.CallbackContext obj)
+    {
+        if (GameUIManager.IsPaused) return;
+        if (IsDashing) return;
+        if (Time.time < lastDashTime + dashCooldown) return;
+
+        PlayDashSound();
+        StartCoroutine(DashCoroutine());
+    }
+
+    private IEnumerator DashCoroutine()
+    {
+        IsDashing  = true;
+        lastDashTime = Time.time;
+
+        Vector2 dashDir = GetMovementDirection();
+        if (dashDir == Vector2.zero)
+            dashDir = attack1Dir;
+
+        if (dashEffect != null)
+        {
+            dashEffect.SetTrigger("Dash");
+        }
+
+        body.AddForce(dashDir * dashForce, ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(dashDuration);
+
+        body.linearVelocity = Vector2.zero;
+        IsDashing = false;
     }
 
     private Vector2 attack1Dir = Vector2.right;
@@ -111,6 +160,4 @@ public class PlayerCharacter : BaseCharacter
             }
         }
     }
-
-
 }

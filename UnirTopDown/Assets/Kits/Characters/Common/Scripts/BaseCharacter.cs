@@ -22,6 +22,8 @@ public class BaseCharacter : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip attackSound;
+    [SerializeField] AudioClip dashSound;
+    [SerializeField] AudioClip blockSound;
 
     private bool isRecoiling = false;
     private bool isBlocking = false;
@@ -34,6 +36,17 @@ public class BaseCharacter : MonoBehaviour
             animator.SetBool("IsBlocking", value);
         }
     }
+    private bool isDashing = false;
+    protected bool IsDashing
+    {
+        get => isDashing;
+        set
+        {
+            isDashing = value;
+        }
+    }
+
+    protected Vector2 GetMovementDirection() => movementDir;
 
     protected virtual void Awake()
     {
@@ -89,10 +102,18 @@ public class BaseCharacter : MonoBehaviour
             audioSource.PlayOneShot(attackSound);
     }
 
+    protected void PlayDashSound()
+    {
+        if (audioSource != null && dashSound != null)
+            audioSource.PlayOneShot(dashSound);
+    }
+
     internal void NotifyAttack1(Vector2 hitDirection, float damage)
     {
         if (isBlocking)
         {
+            if (audioSource != null && blockSound != null)
+                audioSource.PlayOneShot(blockSound);
             StartCoroutine(RecoilCoroutine(hitDirection, 0.5f));
             StartCoroutine(BlockTintCoroutine());
         }

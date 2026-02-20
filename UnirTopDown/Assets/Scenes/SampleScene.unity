@@ -774,12 +774,24 @@ MonoBehaviour:
   tintDuration: 0.2
   audioSource: {fileID: 0}
   attackSound: {fileID: 0}
+  dashSound: {fileID: 0}
+  blockSound: {fileID: 0}
   moveIARef: {fileID: 1842938032}
   attack1IARef: {fileID: 466113315}
   blockIARef: {fileID: 878788024602337100, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
+  dashIARef: {fileID: 0}
   attack1Radius: 0.25
   attack1Range: 1
   attack1Damage: 0.1
+  dropPrefabsToSpawn: []
+  minSpawnTime: 1
+  maxSpawnTime: 5
+  minSpawnRadius: 2
+  maxSpawnRadius: 7
+  dashForce: 15
+  dashDuration: 0.2
+  dashCooldown: 1
+  dashEffect: {fileID: 0}
 --- !u!50 &939464918
 Rigidbody2D:
   serializedVersion: 5
@@ -1232,6 +1244,8 @@ MonoBehaviour:
   tintDuration: 0.2
   audioSource: {fileID: 0}
   attackSound: {fileID: 0}
+  dashSound: {fileID: 0}
+  blockSound: {fileID: 0}
 --- !u!114 &1154108235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,57 +1880,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6020062089741049630}
     - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleOnPlayerDeath
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 108252278}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleOnLifeChanged
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameUIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LifeBar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: -4430787078555885454, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
-      propertyPath: OnLifeChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2334987622982136902, guid: 527d545647c13e94aa9eccfe5999be1a, type: 3}
       propertyPath: moveIARef
       value: 
