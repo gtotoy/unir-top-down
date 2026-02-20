@@ -1,8 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
-using UnityEngine.Audio;
 
 public class PlayerCharacter : BaseCharacter
 {
@@ -68,13 +66,17 @@ public class PlayerCharacter : BaseCharacter
 
     private async void Start()
     {
-        while(!destroyCancellationToken.IsCancellationRequested)
+        try
         {
-            await Awaitable.WaitForSecondsAsync(Random.Range(minSpawnTime, maxSpawnTime));
-            var dropPrefab = dropPrefabsToSpawn[Random.Range(0, dropPrefabsToSpawn.Length)];
-            var dropPosition = transform.position + Random.Range(minSpawnRadius, maxSpawnRadius) * (Vector3)Random.insideUnitCircle;
-            GameObject.Instantiate(dropPrefab, dropPosition, Quaternion.identity);
+            while (!destroyCancellationToken.IsCancellationRequested)
+            {
+                await Awaitable.WaitForSecondsAsync(Random.Range(minSpawnTime, maxSpawnTime), destroyCancellationToken);
+                var dropPrefab = dropPrefabsToSpawn[Random.Range(0, dropPrefabsToSpawn.Length)];
+                var dropPosition = transform.position + Random.Range(minSpawnRadius, maxSpawnRadius) * (Vector3)Random.insideUnitCircle;
+                GameObject.Instantiate(dropPrefab, dropPosition, Quaternion.identity);
+            }
         }
+        catch { }
     }
 
     protected override void Update()

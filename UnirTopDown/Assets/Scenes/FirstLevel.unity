@@ -25378,27 +25378,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[0].enemies.Array.data[0].count
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[0].enemies.Array.data[1].count
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[1].enemies.Array.data[0].count
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[1].enemies.Array.data[1].count
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[2].enemies.Array.data[0].count
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[2].enemies.Array.data[1].count
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[0].enemies.Array.data[1].prefab
