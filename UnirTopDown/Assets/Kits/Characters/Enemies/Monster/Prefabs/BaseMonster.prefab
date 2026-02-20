@@ -175,7 +175,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 35
   m_TargetDisplay: 0
 --- !u!114 &4824716159025977813
 MonoBehaviour:
@@ -230,6 +230,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeBar
   imageFill: {fileID: 4714472962957884027}
+  avatarImage: {fileID: 0}
+  flashDuration: 0.15
+  shakeDuration: 0.3
+  shakeMagnitude: 8
 --- !u!1 &2748235937962425805
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +397,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 21
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1267550136445687439, guid: cf3be3dafe57b419e885340c0873aad0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

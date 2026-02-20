@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: AxeSoldier, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 288949511556593708, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -63,6 +67,10 @@ PrefabInstance:
     - target: {fileID: 5697114992421910616, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
       propertyPath: m_Name
       value: AxeMonster Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921727999060628433, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 107072096443177563, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}

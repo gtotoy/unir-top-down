@@ -201,7 +201,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1839488653993705794, guid: 63555c658eb534f48acbb1ba682fbec3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -322,15 +322,15 @@ MonoBehaviour:
   healingSound: {fileID: 8300000, guid: 9cbf65c469d16644e9b8963841b6d4dd, type: 3}
   damagedSound: {fileID: 8300000, guid: 2117c1b4740df21489778f2058268309, type: 3}
   feedbackEffects: {fileID: 8510779626225116138}
-  moveIARef: {fileID: 0}
-  attack1IARef: {fileID: 0}
+  moveIARef: {fileID: -1680190386980627800, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
+  attack1IARef: {fileID: 1120369429361536294, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
   blockIARef: {fileID: 878788024602337100, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
   dashIARef: {fileID: -2099379676528639254, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
   attack1Radius: 1
   attack1Range: 0.4
   attack1Damage: 0.1
   dropPrefabsToSpawn:
-  - {fileID: 8540471824933652219, guid: f2b37173c15443a42b1deff1c864559d, type: 3}
+  - {fileID: 8540471824933652219, guid: 4a735b0c66db5fd4fac21b0a64d7c2cb, type: 3}
   minSpawnTime: 3
   maxSpawnTime: 10
   minSpawnRadius: 3
@@ -466,7 +466,7 @@ MonoBehaviour:
   OnLifeChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3924307095186824467, guid: 49d0269fa0dbd8b4d8479dfa154940ea, type: 3}
         m_TargetAssemblyTypeName: LifeBar, Assembly-CSharp
         m_MethodName: HandleOnLifeChanged
         m_Mode: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3756445190083313348, guid: 112d47d1bc957cf4aa18ce8d5dfa485f, type: 3}
         m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
         m_MethodName: HandleOnPlayerDeath
         m_Mode: 1
