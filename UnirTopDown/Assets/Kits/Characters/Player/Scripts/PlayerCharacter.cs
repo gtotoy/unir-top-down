@@ -27,7 +27,6 @@ public class PlayerCharacter : BaseCharacter
     [SerializeField] float dashForce = 15f;
     [SerializeField] float dashDuration = 0.2f;
     [SerializeField] float dashCooldown = 1f;
-    [SerializeField] Animator dashEffect;
 
     private float lastDashTime = -999f;
 
@@ -135,10 +134,7 @@ public class PlayerCharacter : BaseCharacter
         if (dashDir == Vector2.zero)
             dashDir = attack1Dir;
 
-        if (dashEffect != null)
-        {
-            dashEffect.SetTrigger("Dash");
-        }
+        TriggerFeedbackEffect("Dash");
 
         body.AddForce(dashDir * dashForce, ForceMode2D.Impulse);
 

@@ -81,6 +81,11 @@ PrefabInstance:
       insertIndex: 6
       addedObject: {fileID: 8497039214477651666}
   m_SourcePrefab: {fileID: 100100000, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+--- !u!95 &2679577095618929877 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5734466460912720260, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+  m_PrefabInstance: {fileID: 7690793526564207953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2714289658902578441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5697114992421910616, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
@@ -104,9 +109,14 @@ MonoBehaviour:
   tintDuration: 0.2
   audioSource: {fileID: 8512415880034106516}
   attackSound: {fileID: 8300000, guid: 315556af55364ad479ee9793bb73ef42, type: 3}
+  dashSound: {fileID: 0}
+  blockSound: {fileID: 0}
+  healingSound: {fileID: 8300000, guid: 9cbf65c469d16644e9b8963841b6d4dd, type: 3}
+  feedbackEffects: {fileID: 2679577095618929877}
   preferredRange: 2
   attackRange: 2.5
   attackCooldown: 2
+  attackDamage: 0.1
 --- !u!82 &8512415880034106516 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2060681408055607749, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}

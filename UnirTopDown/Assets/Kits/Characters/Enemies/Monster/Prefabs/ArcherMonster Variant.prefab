@@ -109,7 +109,16 @@ MonoBehaviour:
   tintDuration: 0.2
   audioSource: {fileID: 4304980543162963184}
   attackSound: {fileID: 8300000, guid: 45814fcac9c8adc4493a18820f1ef9f7, type: 3}
+  dashSound: {fileID: 0}
+  blockSound: {fileID: 0}
+  healingSound: {fileID: 8300000, guid: 9cbf65c469d16644e9b8963841b6d4dd, type: 3}
+  feedbackEffects: {fileID: 7544572749184912561}
   shootRange: 6
   fleeRange: 3
   attackCooldown: 2.5
   arrowPrefab: {fileID: 5676094657590121524, guid: edf1556f23938e146b9bd9a67a8774cb, type: 3}
+--- !u!95 &7544572749184912561 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5734466460912720260, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+  m_PrefabInstance: {fileID: 2821327236024128821}
+  m_PrefabAsset: {fileID: 0}

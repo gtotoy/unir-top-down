@@ -24,6 +24,10 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField] AudioClip attackSound;
     [SerializeField] AudioClip dashSound;
     [SerializeField] AudioClip blockSound;
+    [SerializeField] AudioClip healingSound;
+
+    [Header("FeedbackEffects")]
+    [SerializeField] Animator feedbackEffects;
 
     private bool isRecoiling = false;
     private bool isBlocking = false;
@@ -82,7 +86,10 @@ public class BaseCharacter : MonoBehaviour
         var drop = other.GetComponent<Drop>();
         if (drop) {
             life.RecoverHealth(drop.DropDefinition.HealthRecovery);
+            TriggerFeedbackEffect("Healed");
             drop.NotifyPickedUp();
+            if (audioSource != null && healingSound != null)
+                audioSource.PlayOneShot(healingSound);
         }
     }
 
@@ -106,6 +113,14 @@ public class BaseCharacter : MonoBehaviour
     {
         if (audioSource != null && dashSound != null)
             audioSource.PlayOneShot(dashSound);
+    }
+
+    protected void TriggerFeedbackEffect(string animatorHash)
+    {
+        if (feedbackEffects != null)
+        {
+            feedbackEffects.SetTrigger(animatorHash);
+        }
     }
 
     internal void NotifyAttack1(Vector2 hitDirection, float damage)

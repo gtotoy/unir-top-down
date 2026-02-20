@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7040749431789189278}
   - component: {fileID: 8510779626225116138}
   m_Layer: 0
-  m_Name: DashAnimation
+  m_Name: FeedbackEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 3282309943128702403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.277, z: 0}
-  m_LocalScale: {x: 1.3801, y: 1.3801, z: 1.3801}
+  m_LocalPosition: {x: 0, y: -0.277, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5797007773952590743}
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 3282309943128702403}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4bd5b3c8c1762471aaa9d375dd372eae, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2820845448ec96d43a5f8e31e76256b4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -319,6 +319,8 @@ MonoBehaviour:
   attackSound: {fileID: 8300000, guid: 811a7b0725e454248805360ed52e483b, type: 3}
   dashSound: {fileID: 8300000, guid: 05fc8e444ddc69d44b670c6256751bfb, type: 3}
   blockSound: {fileID: 8300000, guid: 4b906616bbd3b83479d304f4fba682f5, type: 3}
+  healingSound: {fileID: 8300000, guid: 9cbf65c469d16644e9b8963841b6d4dd, type: 3}
+  feedbackEffects: {fileID: 8510779626225116138}
   moveIARef: {fileID: 0}
   attack1IARef: {fileID: 0}
   blockIARef: {fileID: 878788024602337100, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
@@ -328,14 +330,13 @@ MonoBehaviour:
   attack1Damage: 0.1
   dropPrefabsToSpawn:
   - {fileID: 8540471824933652219, guid: f2b37173c15443a42b1deff1c864559d, type: 3}
-  minSpawnTime: 1
-  maxSpawnTime: 5
-  minSpawnRadius: 2
-  maxSpawnRadius: 7
+  minSpawnTime: 3
+  maxSpawnTime: 10
+  minSpawnRadius: 3
+  maxSpawnRadius: 10
   dashForce: 15
   dashDuration: 0.2
   dashCooldown: 1
-  dashEffect: {fileID: 8510779626225116138}
 --- !u!114 &4276477468395572575
 MonoBehaviour:
   m_ObjectHideFlags: 0
