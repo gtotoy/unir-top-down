@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LancerMonster Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2714289658902578441, guid: d044f81deb293494480a1f1add1c1773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -563,6 +567,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: ad7916788e1db6b449b1c4b84ca8508c, type: 3}
   m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
+--- !u!1001 &792773403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1005026789724966104, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_Name
+      value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.60868
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.85174
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.86591
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +684,10 @@ PrefabInstance:
     - target: {fileID: 7509587224087129453, guid: 37738d552210d3f4faf165f2dbde6d28, type: 3}
       propertyPath: m_Name
       value: ArcherMonster Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509587224087129453, guid: 37738d552210d3f4faf165f2dbde6d28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7917130067882896004, guid: 37738d552210d3f4faf165f2dbde6d28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1646,6 +1711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AxeMonster Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5910097370229971788, guid: 886c6de6c0fe88d458220030a4ab32cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6335650078156922021, guid: 886c6de6c0fe88d458220030a4ab32cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.1
@@ -1954,3 +2023,4 @@ SceneRoots:
   - {fileID: 43162287}
   - {fileID: 1619235085}
   - {fileID: 836085256561760462}
+  - {fileID: 792773403}

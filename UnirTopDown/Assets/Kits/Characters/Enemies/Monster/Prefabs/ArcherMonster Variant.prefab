@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e7d18f15001e94abd23b5ba41ff3a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcherMonster
-  movementSpeed: 5
+  movementSpeed: 4
   recoilForce: 5
   recoilDuration: 0.15
   tintDuration: 0.2
