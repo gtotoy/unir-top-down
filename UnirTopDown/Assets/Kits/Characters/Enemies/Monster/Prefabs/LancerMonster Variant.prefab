@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7690793526564207953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -5303793081379744459, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8497039214477651666}
+    - target: {fileID: -5303793081379744459, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleOnDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: -5303793081379744459, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LancerMonster, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 288949511556593708, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -594197781322936934, guid: 31e15b074d7344a3b99376dd4f70eb1d, type: 3}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402091898445971377, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697114992421910616, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_Name
+      value: LancerMonster Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7926476537536308465, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 8b4c7d388df0fdf4783819c02fd9700e, type: 2}
+    m_RemovedComponents:
+    - {fileID: 107072096443177563, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5697114992421910616, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 8497039214477651666}
+  m_SourcePrefab: {fileID: 100100000, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+--- !u!1 &2714289658902578441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5697114992421910616, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+  m_PrefabInstance: {fileID: 7690793526564207953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8497039214477651666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714289658902578441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f25314c3ae92a34686a0be8662454d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LancerMonster
+  movementSpeed: 1
+  recoilForce: 5
+  recoilDuration: 0.15
+  tintDuration: 0.2
+  audioSource: {fileID: 8512415880034106516}
+  attackSound: {fileID: 8300000, guid: 315556af55364ad479ee9793bb73ef42, type: 3}
+  preferredRange: 2
+  attackRange: 2.5
+  attackCooldown: 2
+--- !u!82 &8512415880034106516 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2060681408055607749, guid: 0abf9aa951d73394c960d69f65ec70c4, type: 3}
+  m_PrefabInstance: {fileID: 7690793526564207953}
+  m_PrefabAsset: {fileID: 0}
