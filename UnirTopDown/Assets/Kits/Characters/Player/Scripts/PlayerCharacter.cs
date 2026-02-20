@@ -10,6 +10,7 @@ public class PlayerCharacter : BaseCharacter
     [Header("Attack 1 data")]
     [SerializeField] float attack1Radius = 0.5f;
     [SerializeField] float attack1Range = 0.5f;
+    [SerializeField] float attack1Damage = 0.1f;
 
     private void OnEnable()
     {
@@ -87,7 +88,7 @@ public class PlayerCharacter : BaseCharacter
             var baseCharacter = hit.collider.GetComponent<BaseCharacter>();
             if (baseCharacter && baseCharacter != this) {
                 Vector2 recoilDir = (hit.transform.position - transform.position).normalized;
-                baseCharacter.NotifyAttack1(recoilDir);
+                baseCharacter.NotifyAttack1(recoilDir, attack1Damage);
             }
         }
     }

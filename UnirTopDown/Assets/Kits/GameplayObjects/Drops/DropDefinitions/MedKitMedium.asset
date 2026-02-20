@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b288784d72d3d6a44863e5f26bcfebc6, type: 3}
   m_Name: MedKitMedium
   m_EditorClassIdentifier: Assembly-CSharp::DropDefinition
-  HealthRecovery: 0
+  HealthRecovery: 0.25
   Bullets: 0

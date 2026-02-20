@@ -6,6 +6,7 @@ public class AxeSoldier : BaseMonster
     [SerializeField] float attackRange = 1.2f;
     [SerializeField] float attackCooldown = 1.5f;
     [SerializeField] float attackRadius = 0.6f;
+    [SerializeField] float attackDamage = 0.1f;
 
     private float lastAttackTime;
 
@@ -41,7 +42,7 @@ public class AxeSoldier : BaseMonster
         {
             var character = hit.collider.GetComponent<BaseCharacter>();
             if (character != null && character != this)
-                character.NotifyAttack1(dir);
+                character.NotifyAttack1(dir, attackDamage);
         }
     }
 }

@@ -5,6 +5,7 @@ public class LancerMonster : BaseMonster
     [SerializeField] float preferredRange = 2f;
     [SerializeField] float attackRange = 2.5f;
     [SerializeField] float attackCooldown = 2f;
+    [SerializeField] float attackDamage = 0.1f;
 
     private float lastAttackTime;
 
@@ -43,7 +44,7 @@ public class LancerMonster : BaseMonster
         {
             var character = hit.collider.GetComponent<BaseCharacter>();
             if (character != null && character != this)
-                character.NotifyAttack1(dir);
+                character.NotifyAttack1(dir, attackDamage);
         }
     }
 }

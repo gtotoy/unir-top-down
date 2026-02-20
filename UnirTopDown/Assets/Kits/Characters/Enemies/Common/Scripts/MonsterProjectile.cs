@@ -6,7 +6,8 @@ public class MonsterProjectile : MonoBehaviour
 {
     [SerializeField] float speed = 10f;
     [SerializeField] float maxRange = 8f;
-    [SerializeField] bool rotateToDirection = true; 
+    [SerializeField] bool rotateToDirection = true;
+    [SerializeField] float damage = 0.1f;
 
     private Vector2 direction;
     private GameObject owner;
@@ -54,7 +55,7 @@ public class MonsterProjectile : MonoBehaviour
         if (character != null)
         {
             hasHit = true;
-            character.NotifyAttack1(direction);
+            character.NotifyAttack1(direction, damage);
             DestroyProjectile();
         }
     }

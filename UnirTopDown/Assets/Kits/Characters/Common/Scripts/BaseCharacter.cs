@@ -89,7 +89,7 @@ public class BaseCharacter : MonoBehaviour
             audioSource.PlayOneShot(attackSound);
     }
 
-    internal void NotifyAttack1(Vector2 hitDirection)
+    internal void NotifyAttack1(Vector2 hitDirection, float damage)
     {
         if (isBlocking)
         {
@@ -98,7 +98,7 @@ public class BaseCharacter : MonoBehaviour
         }
         else
         {
-            life.ReceiveDamage(0.1f);
+            life.ReceiveDamage(damage);
             StartCoroutine(RecoilCoroutine(hitDirection, 1f));
             StartCoroutine(RedTintCoroutine());
         }
