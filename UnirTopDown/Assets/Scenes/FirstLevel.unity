@@ -2796,10 +2796,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10
-  field of view: 135.2
+  far clip plane: 1000
+  field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8093,12 +8093,12 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 135.2
-    OrthographicSize: 6
+    FieldOfView: 60
+    OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 10
+    FarClipPlane: 1000
     Dutch: 0
-    ModeOverride: 1
+    ModeOverride: 0
     PhysicalProperties:
       GateFit: 2
       SensorSize: {x: 21.946, y: 16.002}
@@ -14669,6 +14669,7 @@ GameObject:
   - component: {fileID: 1218261269}
   - component: {fileID: 1218261272}
   - component: {fileID: 1218261271}
+  - component: {fileID: 1218261273}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -14842,6 +14843,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5, y: 1.767693}
   m_EdgeRadius: 0
+--- !u!114 &1218261273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218261268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce5d6fe85d3b94f8e8bb40e8369ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CastleEntrance
 --- !u!1 &1237506357
 GameObject:
   m_ObjectHideFlags: 0
@@ -25353,23 +25366,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[0].enemies.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[1].enemies.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[2].enemies.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[0].enemies.Array.data[0].count
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: groups.Array.data[0].enemies.Array.data[1].count
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[1].enemies.Array.data[0].count
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[1].enemies.Array.data[1].count
@@ -25377,14 +25394,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[2].enemies.Array.data[0].count
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: groups.Array.data[2].enemies.Array.data[1].count
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: groups.Array.data[0].enemies.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 2714289658902578441, guid: d044f81deb293494480a1f1add1c1773, type: 3}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[1].enemies.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 5910097370229971788, guid: 886c6de6c0fe88d458220030a4ab32cd, type: 3}
+      objectReference: {fileID: 7509587224087129453, guid: 37738d552210d3f4faf165f2dbde6d28, type: 3}
     - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
       propertyPath: groups.Array.data[1].enemies.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 5910097370229971788, guid: 886c6de6c0fe88d458220030a4ab32cd, type: 3}
+    - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: groups.Array.data[2].enemies.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 2714289658902578441, guid: d044f81deb293494480a1f1add1c1773, type: 3}
+    - target: {fileID: 2844777812021448290, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
+      propertyPath: groups.Array.data[2].enemies.Array.data[1].prefab
       value: 
       objectReference: {fileID: 7509587224087129453, guid: 37738d552210d3f4faf165f2dbde6d28, type: 3}
     - target: {fileID: 3107055694600539601, guid: a2a98495be2ef0144a4b132f3587c70d, type: 3}
