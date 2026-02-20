@@ -64,6 +64,15 @@ public class BaseCharacter : MonoBehaviour
         }
     }
 
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        var drop = other.GetComponent<Drop>();
+        if (drop) {
+            life.RecoverHealth(drop.DropDefinition.HealthRecovery);
+            drop.NotifyPickedUp();
+        }
+    }
+
     public virtual void HandleOnDeath()
     {
         Destroy(gameObject);
